@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Map</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+    <style>
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .gm-style-iw {
+        height: 200px;
+        width: 300px;
+        overflow: hidden;
+}
+    </style>
+
+
+    <!-- Custom CSS -->
+    <!--link rel="stylesheet" href="css/styling.css"-->
+</head>
+
+<body>
+        <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand">Bangalore-Places</a>
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" data-bind="textInput: searchOption, valueUpdate: 'afterkeydown'" placeholder="Search Locations...">
+                  <!--button onclick="myFunction()">View All</button-->
+                </form>
+            </nav>
+            <div id="list">
+            <ul data-bind="foreach: myLocationsFilter">
+                    <a href="#"><li data-bind="text: title, click: $parent.populateAndBounceMarker"></li></a>
+                </ul>
+            </div>
+    <div id="map">
+        <!-- Map -->
+    </div>
+    <!--div class = "side">
+        <h5 class="side_title">Map Locations</h5>
+        <!-- Search Input -->
+        <!--input class="search" data-bind="textInput: searchOption, valueUpdate: 'afterkeydown'" placeholder="Search Locations...">
+        <ul class="nav flex-column" data-bind="foreach: myLocationsFilter">
+            <a href="#"><li class="nav-item text-white location_list" data-bind="text: title, click: $parent.populateAndBounceMarker"></li></a>
+        </ul>
+    </div-->
+
+    <script
+        src="scripts/knockout.js" charset="utf-8">
+    </script>
+
+    <script
+        src="scripts/main.js" charset="utf-8">
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBNhvFu7WUCBCL3f-mmxcksCqugWDvv-yc&callback=startApp"
+        onerror="googleError()">
+    </script>
+    </div>
+</body>
+</html>
