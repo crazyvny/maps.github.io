@@ -26,5 +26,4 @@ This will briefly displays a map with custom stlye
 
 4. Click on markers to expand popups.
 
-## For live this project
-* http://crazyvny.github.io
+
